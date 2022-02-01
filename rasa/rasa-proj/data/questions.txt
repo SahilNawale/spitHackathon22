@@ -1,0 +1,31 @@
+
+
+Greeting: Hi, Hello, Good morning, Byee
+Negation: no, idts
+Affirmation: yes, indeed, good, great, amazing
+Sad: horrible
+
+are you a bot
+how to find/sort/search college
+how to get best college
+how to register 
+not able to search college
+no search option
+how to use virtual tour/360/panorama
+medical call
+contact us
+
+how to register/login/signup
+Registration form link
+Registration/signup failed/error/problem
+
+not able to login
+not able to register
+not able to see virtual tour 
+contact
+how to contact
+
+
+
+
+

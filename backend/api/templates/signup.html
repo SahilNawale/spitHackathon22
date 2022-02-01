@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Sign In {% endblock %}
+
+{% block custom_styles  %}
+<style>
+    body{
+        background-color: #8b86cc;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="flex flex-col" id="reg-form">
+    {% if not registered %}
+
+    <form action="." class="form-control" method="post" enctype="multipart/form-data">
+      {%csrf_token%}  
+      <div class="form-container">
+        <label for="id_pdf" class="text-center">Upload CET Result</label><input type="file" class="form-input" name="pdf" id="pdf" />
+        <input type="submit" class="btn-submit form-input" name="submit" id="submit" value="Upload" />
+        <div class="text-center text-xl mb-2">OR</div>
+        <div class="text-center">Enter Details</div>
+        
+        <input type="text" class="form-input rounded" name="name" id="email" value="{{fullnameval}}" placeholder="Name"/>
+        <input type="text" class="form-input rounded" name="username" id="username"  placeholder="Username"/>
+        <input type="email" class="form-input rounded" name="email" id="email" placeholder="Email Address"/>
+        <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
+        <input type="number" class="form-input" name="percentile" id="percentile" value="{{percentileval}}" placeholder="Percentile"/>
+        <input type="text" name="address" id="address" class="form-input" placeholder="Address">
+        <input type="number" class="form-input" name="pincode" id="pincode" placeholder="Pincode"/>
+        <input type="submit" class="btn-submit form-input" name="submit" id="submit" value="Register" />
+        <div class="text-center"> or <a href="{% url 'login' %}" id="alt-log" class="alt">Login</a></div>
+      </div>
+    </form>
+  </div>
+
+{% else %}
+  <div class="flex">
+    <div class="form-control form-container text-center drop-shadow-lg mx-auto flex-row">
+        Thank you for registering. You may <a href="{% url 'login' %}" class="underline mx-1"> login </a> Now!
+    </div> 
+  </div> 
+{% endif %}
+{% endblock %}

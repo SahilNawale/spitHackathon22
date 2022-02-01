@@ -1,0 +1,59 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_find_college:
+  - text: "You can find for colleges by searching 	for them in the search tab"
+  
+  utter_ask_filter: 
+  - text: "Filters are avaliable in the search menu based on the marksheet you have uploaded or the details youve entered"
+  
+  utter_how_to_search: 
+  - text: "Kindly login to see the search"
+
+  utter_how_to_use_vr: 
+  - text: "In the search menu click on virtual tour option, a new rpg game will open. Move your character with arrow keys to navgiate to any of stop sign,hit M on keyboard to get a 360 view of that point"
+
+  utter_are_medical_colleges: 
+  - text: "Sorry no medical colleges are present currently"
+
+  utter_how_to_contact: 
+  - text: "You can directly reach out to us by contacting on our email test@gmail.com"
+
+  utter_how_to_register: 
+  - text: "Here is link to registration form , you can enter your details here : http://127.0.0.1:8000/api/signup/"
+
+  utter_register_failed: 
+  - text: "You must have already registered with same credentials,or details must be taken.Try logging in.If issue persists try again later"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} {{curr_college.name}} {% endblock %}
+
+{% block content %}
+
+ <div class="college-desc">
+    <div class="name">{{curr_college.name}}</div>
+    <div class="address">Address - {{curr_college.address}}</div>
+    <div class="pincode">Pincode - {{curr_college.pincode}}</div>
+    <div class="cutoff">Cutoff - {{curr_college.cutoff}} Percentile</div>
+    <div class="nirf-rank">NIRF Ranking: {{curr_college.nirf}}</div>
+
+    {% if curr_college.hostel %}
+        <div class="hostel">Hostel Available</div>
+    {% else %}
+        <div class="no-hostel">No Hostel</div>
+    {% endif %}
+    <div class="salary">Average Salary : {{curr_college.salary}}</div>
+    <div class="website">Website: <a href="{{curr_collge.website}}">{{curr_college.website}}</a></div>
+</div>
+
+{% endblock %}

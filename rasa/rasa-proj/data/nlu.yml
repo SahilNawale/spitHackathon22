@@ -1,0 +1,166 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_find_college
+  examples: |
+    - how to find college
+    - find college
+    - how to get college
+    - how do i get college 
+    - how do i find college
+    - best college
+
+- intent: ask_filter
+  examples: |
+    - how to filter
+    - filter
+    - sort 
+    - how to filter colleges
+    - how to sort colleges
+    - how do i sort colleges
+
+- intent: how_to_search
+  examples: |
+    - how to search
+    - how do i search
+    - i am not able to search for colleges
+    - is there any option to search for colleges
+    - search for colleges is not avaliable
+    - why i cannot see the search option
+    - cant see search option
+    - no search option
+
+- intent: how_to_use_vr
+  examples: |
+    - how to use virtual tour
+    - virtual tour
+    - 360 view
+    - not able to see 360 view virtual tour
+    - how to use panorama
+    - vr
+
+- intent: are_medical_colleges
+  examples: |
+    - are medical colleges present
+    - can i find medical colleges
+    - where are medical colleges
+    - medical
+    
+- intent: how_to_contact
+  examples: |
+    - contact us
+    - call us
+    - what is your email
+    - email
+
+- intent: how_to_register
+  examples: |
+    - how to register
+    - register
+    - give me registration link
+    - form link to fill
+    - where can i enter my details
+    - how can i enter my details
+    - signup
+
+- intent: register_failed
+  examples: |
+    - I am not able to regitser
+    - register failed
+    - singup failed
+    - registration failed
+    - not able to signup
+    - not able to register
+    - fix registration error
+    - how to fix signup error
+    - registration problem
+    - signup problem

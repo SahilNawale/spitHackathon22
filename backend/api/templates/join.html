@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Join In {% endblock %}
+
+{% block custom_styles  %}
+<style>
+    body{
+        background-color: #8b86cc;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="flex flex-col hidden" id="reg-form">
+    <form action="register" class="form-control" method="post">
+        {% csrf_token %}
+        <div class="form-container">
+            <div class="flex">
+                <input type="text" class="form-input rounded mr-1" name="fname" id="fname" placeholder="First Name" />
+                <input type="text" class="form-input rounded ml-1" name="lname" id="lname" placeholder="Last Name" />    
+            </div>
+            <input type="email" class="form-input rounded" name="email" id="email" placeholder="Email Address"/>
+            <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
+            <input type="number" class="form-input" name="percetile" id="percentile" placeholder="Percentile"/>
+            <input type="text" name="address" id="address" class="form-input" placeholder="Address">
+            <input type="number" class="form-input" name="pincode" id="pincode" placeholder="Pincode"/>
+            <input type="submit" class="btn-submit form-input" name="submit" id="submit" value="Register" />
+            <div class="text-center"> or <a href="#" id="alt-log" class="alt">Login</a></div>
+        </div>
+    </form>
+</div>
+
+<div class="flex" id="login-form">
+    <form action="register" class="form-control flex-grow-[1]" method="post">
+        <div class="form-container">
+            <input type="email" class="form-input rounded" name="email" id="email" placeholder="Email Address"/>
+            <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
+            <input type="submit" class="btn-submit form-input" name="submit" id="submit" value="Login" />
+            <div class="text-center"> or <a href="#" id="alt-reg" class="alt"> Register</a></div>
+        </div>
+    </form>
+    
+</div>  
+{% endblock %}

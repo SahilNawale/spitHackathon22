@@ -1,0 +1,53 @@
+version: "3.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: tell about finding college
+  steps:
+   - intent: ask_find_college
+   - action: utter_ask_find_college
+
+- rule: tell about filter
+  steps:
+   - intent: ask_filter
+   - action: utter_ask_filter
+
+- rule: tell how to search
+  steps:
+   - intent: how_to_search
+   - action: utter_how_to_search
+
+- rule: tell how to use vr
+  steps:
+   - intent: how_to_use_vr
+   - action: utter_how_to_use_vr
+
+- rule: are medical colleges present
+  steps:
+   - intent: are_medical_colleges
+   - action: utter_are_medical_colleges
+
+- rule: help in contacting
+  steps:
+   - intent: how_to_contact
+   - action: utter_how_to_contact
+
+- rule: help in registration
+  steps:
+   - intent: how_to_register
+   - action: utter_how_to_register
+
+- rule: Give registration failed fix
+  steps:
+   - intent: register_failed
+   - action: utter_register_failed

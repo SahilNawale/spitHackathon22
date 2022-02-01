@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Log In {% endblock %}
+
+{% block custom_styles  %}
+<style>
+    body{
+        background-color: #8b86cc;
+    }
+</style>
+{% endblock %}
+
+{% block content  %}
+<div class="flex" id="login-form">
+  <form action="{% url 'login' %}" class="form-control flex-grow-[1]" method="post">
+    {% csrf_token %}
+    <div class="form-container">
+        <input type="text" class="form-input rounded" name="username" id="username" placeholder="Username"/>
+        <input type="password" name="password" id="password" class="form-input" placeholder="Password" />
+        <input type="submit" class="btn-submit form-input" name="submit" id="submit" value="Login" />
+        <div class="text-center"> or <a href="{% url 'create_user' %}" id="alt-reg" class="alt"> Register </a></div>
+    </div>
+  </form>
+</div> 
+
+{% endblock %}

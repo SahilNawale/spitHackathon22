@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %} Virtual Tour {% endblock %}
+
+{% load static %}
+
+{% block custom_styles  %}
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+    />
+    <!-- <style>
+        body{
+            background-color: #8b86cc;
+        }
+    </style> -->
+
+{% endblock %}
+
+{% block content %}
+<div class="modal-wrapper hidden">
+    <div class="modal">
+      <button onclick="closeModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="inst hidden">
+        <p class="px-4 py-1">Use the arrow keys to move the character around to discover various viewpoints available.</p>
+        <p class="px-4 py-1">Once you reach a checkpoint (Stop sign), press M to reveal the panoramic view</p>
+      </div>
+      <iframe
+        class="mx-auto"
+        src="https://momento360.com/e/u/be204b8cce24487c8ce1182de7b169bf?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium"
+        frameborder="0"
+        width="95%"
+        height="580px"
+      ></iframe>
+    </div>
+    <div class="backdrop"></div>
+  </div>
+
+  <div class="view">
+      <div id="map-container" class="flex flex-col text-center">
+        <div class="text-xl ml-24 mb-2"">Map</div>
+        <div class="map ml-24" id="map"></div>
+      </div>
+
+      <div class="game">
+          <div class="text-4xl mt-5 mb-5">Virtual Tour
+            <button onclick="openModal(-1)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+          </div>
+          <div id="game-container"></div>
+      </div>
+  </div>
+
+{% endblock %}
+
+{% block custom_scripts %}
+    <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""
+    ></script>
+    <script>
+        let map = L.map("map").setView([19.123, 72.833], 15);
+        let marker = L.marker([19.123, 72.833]).addTo(map);
+        L.tileLayer(
+        "https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=hwPAaLiIlgSZqqAt4lHt",
+        {
+            attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        }
+        ).addTo(map);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+{% endblock %}
